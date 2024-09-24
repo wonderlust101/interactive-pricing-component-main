@@ -1,0 +1,10 @@
+.header {
+  width: 100%;
+
+  &__content {
+    grid-area: 1/2;
+    display: grid;
+    justify-items: center;
+    gap: 1rem;
+  }
+}

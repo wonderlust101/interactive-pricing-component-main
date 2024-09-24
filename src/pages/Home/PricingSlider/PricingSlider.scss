@@ -1,0 +1,102 @@
+@use '/src/assets/styles/abstract' as a;
+
+.pricing-slider {
+  grid-area: 1/2;
+  justify-self: center;
+  display: grid;
+  justify-content: center;
+  background-color: white;
+  border-radius: 0.5rem;
+
+  &__section-top {
+    display: grid;
+    gap: 2rem;
+    padding: 2.25rem 1.5rem;
+
+    @include a.breakpoint(medium) {
+      padding: 2.5rem 3rem;
+    }
+  }
+
+  &__section-bottom {
+    display: grid;
+    justify-items: center;
+    gap: 2rem;
+    padding: 2rem 2.75rem;
+
+    @include a.breakpoint(medium) {
+      grid-template: 1fr / repeat(2, 1fr);
+      align-items: center;
+    }
+  }
+
+  &__slider {
+    display: grid;
+    justify-items: center;
+    gap: 1.5rem;
+    grid-template-rows: repeat(3, max-content);
+
+    @include a.breakpoint(medium) {
+      grid-template: max-content max-content / 1fr 1fr;
+    }
+  }
+
+  &__page-views {
+    grid-area: 1/1;
+  }
+
+  &__rate {
+    grid-area: 3/1;
+
+    @include a.breakpoint(medium) {
+      grid-area: 1/2;
+    }
+  }
+
+  &__range-container {
+    grid-area: 2/1;
+    width: 100%;
+
+    @include a.breakpoint(medium) {
+      grid-area: 2 / 1 / 2 / 3;
+    }
+  }
+
+  &__range {
+
+  }
+
+  &__plan {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+    justify-content: center;
+
+    @include a.breakpoint(medium) {
+      justify-content: flex-end;
+    }
+  }
+
+  &__yearly {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+  }
+
+  &__feature-list {
+    display: grid;
+    justify-items: center;
+    gap: 0.7rem;
+    text-align: center;
+
+    @include a.breakpoint(medium) {
+      justify-items: flex-start;
+    }
+  }
+
+  &__feature {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+}
