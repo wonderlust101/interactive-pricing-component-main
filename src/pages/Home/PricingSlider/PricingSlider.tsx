@@ -31,8 +31,12 @@ export default function PricingSlider() {
         ? (currentOption.cost * (1 - discountRate)).toFixed(2)
         : currentOption.cost.toFixed(2);
 
-    const handleSliderChange = (event) => {
-        setSliderValue(event.target.value);
+    const handleSliderChange = (event: any) => {
+        const value = event.target.value;
+        setSliderValue(value);
+
+        const progress = (value / (pricingOptions.length - 1)) * 100;
+        event.target.style.background = `linear-gradient(to right, #A4F3EB ${progress}%, #ECF0FB ${progress}%)`;
     };
 
     const handleBillingToggle = () => {
@@ -57,6 +61,10 @@ export default function PricingSlider() {
                             max={pricingOptions.length - 1}
                             value={sliderValue}
                             onChange={handleSliderChange}
+                            style={{
+                                background: `linear-gradient(to right, #A4F3EB ${(sliderValue / (pricingOptions.length - 1)) * 100}%,
+                                                                        #ECF0FB ${(sliderValue / (pricingOptions.length - 1)) * 100}%)`,
+                            }}
                         />
                     </div>
                 </div>
@@ -81,15 +89,15 @@ export default function PricingSlider() {
                     <ul className="pricing-slider__feature-list">
                         <li className="pricing-slider__feature">
                             <img src={checkIcon} alt="" role="presentation"/>
-                            <p className='pricing-slider__feature-text'>Unlimited websites</p>
+                            <p className="pricing-slider__feature-text">Unlimited websites</p>
                         </li>
                         <li className="pricing-slider__feature">
                             <img src={checkIcon} alt="" role="presentation"/>
-                            <p className='pricing-slider__feature-text'>100% data ownership</p>
+                            <p className="pricing-slider__feature-text">100% data ownership</p>
                         </li>
                         <li className="pricing-slider__feature">
                             <img src={checkIcon} alt="" role="presentation"/>
-                            <p className='pricing-slider__feature-text'>Email reports</p>
+                            <p className="pricing-slider__feature-text">Email reports</p>
                         </li>
                     </ul>
                 </div>
