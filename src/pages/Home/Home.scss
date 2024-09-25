@@ -1,7 +1,10 @@
+@use '/src/assets/styles/abstract' as a;
+
 .home {
   display: grid;
   align-content: center;
-  gap: 5.75rem;
+  gap: 4rem;
   min-height: 100vh;
-  background-color: #F1F5FE;
+  background: url('/images/bg-pattern.svg') no-repeat top center a.$clr-secondary-color-very-pale-blue;
+  background-size: 100% 50%;
 }

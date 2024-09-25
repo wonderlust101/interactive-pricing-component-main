@@ -43,13 +43,41 @@
 
   &__page-views {
     grid-area: 1/1;
+    align-self: center;
+    text-align: center;
+    font-size: 0.75rem;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: 0.10713rem;
+    text-transform: uppercase;
+    color: a.$clr-secondary-color-grayish-blue;
+    
+    @include a.breakpoint(medium) {
+      font-size: 0.875rem;
+      letter-spacing: 0.125rem;
+    }
   }
 
   &__rate {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
     grid-area: 3/1;
+    color: a.$clr-secondary-color-grayish-blue;
 
     @include a.breakpoint(medium) {
       grid-area: 1/2;
+    }
+  }
+
+  &__cost {
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: -0.05rem;
+    color: a.$clr-secondary-color-dark-desaturated-blue;
+
+    @include a.breakpoint(mediun) {
+      font-size: 2.5rem;
     }
   }
 
@@ -71,9 +99,14 @@
     gap: 0.75rem;
     align-items: center;
     justify-content: center;
+    color: a.$clr-secondary-color-grayish-blue;
 
     @include a.breakpoint(medium) {
       justify-content: flex-end;
+    }
+
+    & > * {
+      font-size: 0.75rem;
     }
   }
 
@@ -81,6 +114,27 @@
     display: flex;
     gap: 0.5rem;
     align-items: center;
+
+    & > * {
+      font-size: 0.75rem;
+    }
+  }
+
+  &__discount-container {
+    align-self: center;
+    padding: 0.1rem 0.5rem;
+    font-weight: 800;
+    color: a.$clr-primary-color-light-red;
+    background-color: a.$clr-primary-color-light-grayish-red;
+    border-radius: 1rem;
+  }
+
+  &__discount {
+    display: none;
+
+    @include a.breakpoint(medium) {
+      display: inline;
+    }
   }
 
   &__feature-list {
@@ -98,5 +152,10 @@
     display: flex;
     align-items: center;
     gap: 1rem;
+  }
+  
+  &__feature-text {
+    font-size: 0.75rem;
+    color: a.$clr-secondary-color-grayish-blue;
   }
 }

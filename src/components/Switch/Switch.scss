@@ -1,0 +1,60 @@
+@use '/src/assets/styles/abstract/index' as a;
+
+.switch {
+  width: 2.75rem;
+  height: 1.3rem;
+  border-radius: 50rem;
+  cursor: pointer;
+  position: relative;
+  background-color: a.$clr-secondary-color-light-grayish-blue-200;
+  transition: background-color 0.1s ease;
+  
+  &:hover {
+    background-color: a.$clr-primary-color-strong-cyan;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 7.5%;
+    height: 0.9rem;
+    width: 0.9rem;
+    border-radius: 50rem;
+    transform: translate(0, -50%);
+    background-color: a.$clr-white;
+  }
+
+  &__layout {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__switch-label {
+    font-size: 1rem;
+    font-weight: 700;
+  }
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: max-content;
+    height: 2rem;
+  }
+
+  &__box {
+    display: none;
+  }
+
+  &__box:checked + .switch {
+    background-color: linear-gradient(225deg, #40DB82 0%, #388FE7 100%);
+  }
+
+  &__box:checked + .switch::before {
+    left: unset;
+    right: 7.5%;
+  }
+}

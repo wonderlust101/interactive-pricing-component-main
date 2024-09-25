@@ -14,7 +14,7 @@ If you are developing a production application, we recommend updating the config
 - Configure the top-level `parserOptions` property like this:
 
 ```js
-export default tseslint.config({
+expor[_base.scss](src%2Fassets%2Fstyles%2Fbase%2F_base.scss)t default tseslint.config({
   languageOptions: {
     // other options...
     parserOptions: {
