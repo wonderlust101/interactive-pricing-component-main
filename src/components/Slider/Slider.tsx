@@ -1,4 +1,5 @@
 import {ChangeEventHandler, useEffect, useState} from "react";
+import './Slider.scss'
 
 type SliderProps = {
     sliderValue: number;
@@ -19,7 +20,7 @@ export default function Slider({sliderValue, minValue, maxValue, onChange, progr
 
     return (
         <input
-            className="pricing-slider__range"
+            className="slider"
             type="range"
             min={minValue}
             max={maxValue}

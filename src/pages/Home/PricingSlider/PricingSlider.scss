@@ -95,60 +95,6 @@
     }
   }
 
-  &__range {
-    /* Slider styles */
-    -webkit-appearance: none;
-    appearance: none;
-    width: 100%;
-    cursor: pointer;
-    outline: none;
-    border-radius: 15px;
-    height: 6px;
-    background: a.$clr-secondary-color-light-grayish-blue-100;
-
-    &::-webkit-slider-thumb {
-      -webkit-appearance: none;
-      appearance: none;
-      height: 2.5rem;
-      width: 2.5rem;
-      background: url('/images/icon-slider.svg') a.$clr-primary-color-strong-cyan no-repeat center;
-      box-shadow: 0 20px 30px -5px a.$clr-primary-color-soft-cyan;
-      border-radius: 50%;
-      border: none;
-      transition: 0.2s ease-in-out;
-    }
-
-    /* Firefox thumb styling */
-    &::-moz-range-thumb {
-      height: 2.5rem;
-      width: 2.5rem;
-      background: url('/images/icon-slider.svg') a.$clr-primary-color-strong-cyan no-repeat center;
-      border-radius: 50%;
-      border: none;
-      transition: 0.2s ease-in-out;
-    }
-
-    /* Thumb hover and focus effects for Webkit */
-    &::-webkit-slider-thumb:hover {
-      background-color: a.$clr-primary-color-dark-strong-cyan;
-    }
-
-    &:active::-webkit-slider-thumb,
-    &:focus::-webkit-slider-thumb {
-      background-color: a.$clr-primary-color-dark-strong-cyan;
-    }
-
-    /* Thumb hover and focus effects for Firefox */
-    &::-moz-range-thumb:hover {
-      background-color: a.$clr-primary-color-dark-strong-cyan;
-    }
-
-    &:active::-moz-range-thumb,
-    &:focus::-moz-range-thumb {
-      background-color: a.$clr-primary-color-dark-strong-cyan;
-    }
-  }
-
   &__plan {
     display: flex;
     gap: 0.75rem;
