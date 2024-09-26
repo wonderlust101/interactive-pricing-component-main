@@ -6,6 +6,7 @@ import Switch from "../../../components/Switch/Switch.tsx";
 import checkIcon from '/images/icon-check.svg';
 
 import './PricingSlider.scss'
+import Slider from "../../../components/Slider/Slider.tsx";
 
 type pricingOption = {
     pageViews: string;
@@ -34,9 +35,6 @@ export default function PricingSlider() {
     const handleSliderChange = (event: any) => {
         const value = event.target.value;
         setSliderValue(value);
-
-        const progress = (value / (pricingOptions.length - 1)) * 100;
-        event.target.style.background = `linear-gradient(to right, #A4F3EB ${progress}%, #ECF0FB ${progress}%)`;
     };
 
     const handleBillingToggle = () => {
@@ -54,18 +52,12 @@ export default function PricingSlider() {
                     </p>
 
                     <div className="pricing-slider__range-container">
-                        <input
-                            className="pricing-slider__range"
-                            type="range"
-                            min="0"
-                            max={pricingOptions.length - 1}
-                            value={sliderValue}
-                            onChange={handleSliderChange}
-                            style={{
-                                background: `linear-gradient(to right, #A4F3EB ${(sliderValue / (pricingOptions.length - 1)) * 100}%,
-                                                                        #ECF0FB ${(sliderValue / (pricingOptions.length - 1)) * 100}%)`,
-                            }}
-                        />
+                        <Slider sliderValue={sliderValue} 
+                                minValue={0} 
+                                maxValue={pricingOptions.length - 1} 
+                                onChange={handleSliderChange} 
+                                progressColor='#A4F3EB' 
+                                trackColor='#ECF0FB' />
                     </div>
                 </div>
 
